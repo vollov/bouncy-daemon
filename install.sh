@@ -5,6 +5,7 @@ then
     mkdir "$DIR"
 fi
 
-cp bouncyd /etc/init.d/
+cp -f routes.json $DIR
+cp -f bouncyd /etc/init.d/
 chmod o+x /etc/init.d/bouncyd
 update-rc.d bouncyd defaults
