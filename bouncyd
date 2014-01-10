@@ -24,7 +24,7 @@ start() {
     if [ ! -f "$lock_dir/$prog" ]
     then
         printf "Starting $desc ($prog)...\n "
-        nohup "$BOUNCY" "$DIR/routes.json" 80 1>>"/var/log/bouncy.log" 2>&1 &
+        nohup "$prog" "$DIR/routes.json" 80 1>>"/var/log/bouncy.log" 2>&1 &
         RETVAL=$?
         [ $RETVAL -eq 0 ] && save_pid
     else
